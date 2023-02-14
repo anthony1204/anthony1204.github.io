@@ -1,12 +1,26 @@
-<script>
-var userResponse = "N/A";
-
-function askPass() {
-    "use strict";
-    userResponse = prompt("What's the password?", "000000");
-    if (userResponse === "meaw") {
-        window.location = "yess.html";
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Login page</title>
+</head>
+<body>
+<form>
+    <label for="pswd">Enter your password: </label>
+    <input type="password" id="pswd">
+    <input type="button" value="Submit" onclick="checkPswd();" />
+</form>
+<!--Function to check password the already set password is admin-->
+<script type="text/javascript">
+    function checkPswd() {
+        var confirmPassword = "meaw";
+        var password = document.getElementById("pswd").value;
+        if (password == confirmPassword) {
+             window.location="yess.html";
+        }
+        else{
+            alert("Passwords do not match.");
+        }
     }
-}
 </script>
-<a href="javascript:askPass();">dont click meawer!</a>
+</body>
+</html>
