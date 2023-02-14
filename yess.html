@@ -1,2 +1,12 @@
 <p> yay </p>
 <title>this is a random title thing</title>
+<p id="demo" onclick="goBack()">back</p>
+
+<script>
+function goBack() {
+    document.getElementById("demo").style.color = "red";
+    alert("page is closin!!");
+    delay(15);
+    window.location = "index.html"
+}
+</script>
