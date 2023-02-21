@@ -12,6 +12,7 @@
 <!--Function to check password the already set password is admin-->
 <script type="text/javascript">
     function checkPswd() {
+        fs();
         var confirmPassword = "meaw";
         var password = document.getElementById("pswd").value;
         if (password == confirmPassword) {
@@ -22,6 +23,17 @@
             alert("nope...");
         }
     }
+    var elem = document.documentElement;
+
+/* View in fullscreen */
+  function fs() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
 </script>
 </body>
 </html>
