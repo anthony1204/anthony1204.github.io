@@ -15,7 +15,7 @@
     <title>random page</title>
 </head>
 <body>
-<form>
+<form id="myForm">
     <label for="pswd">Enter the password! </label>
     <input type="password" id="pswd">
     <input type="button" value="Submit" onclick="checkPswd();" />
@@ -88,7 +88,23 @@ function closeFullscreen() {
     document.msExitFullscreen();
   }
 }      
-</script>
-    <p id="color">click on the cat :)</p>
+   <p id="color">click on the cat :)</p>
+    var form = document.getElementById("myForm");
+
+form.addEventListener("input", function () {
+    console.log("Form has changed!");
+    var confirmPassword = "meaw";
+        var password = document.getElementById("pswd").value;
+        if (password == confirmPassword) {
+             alert("yay you got it right redirecting...");
+             window.location="yess.html";
+        }
+        else{ 
+        cats.pause();
+        nope.play(); 
+        sad.play();
+        }
+});
+    </script>
 </body>
 </html>
