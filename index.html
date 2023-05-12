@@ -19,7 +19,7 @@
     <title>random page</title>
 </head>
 <body>
-    <iframe id="if"></iframe>
+    <iframe id="if" hidden></iframe>
 <form id="myForm">
     <label for="pswd">Enter the password! </label>
     <input type="password" maxlength=4 id="pswd">
@@ -27,10 +27,6 @@
 </form>
 <!--Function to check password the already set password is admin-->
 <script type="text/javascript">
-    while (true){
-    checkPswd();
-    wait(3);
-}
     function checkPswd() {
         var confirmPassword = "meaw";
         var password = document.getElementById("pswd").value;
@@ -39,8 +35,6 @@
             input.setAttribute("type","text");
             input.setAttribute("value","redirecting...");
              setTimeout(() => { window.location="yess.html";}, 1500);
-        }
-        else{ 
         }
     }
 /* Get the documentElement (<html>) to display the page in fullscreen */
