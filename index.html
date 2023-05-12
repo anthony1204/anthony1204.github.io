@@ -10,11 +10,16 @@
        border-color: #33ca47;
        border-width: 5px;
     }
+    if{
+      height:100%;
+      width=100%;
+    }
     </style>
 <head>
     <title>random page</title>
 </head>
 <body>
+    <iframe id="if"></iframe>
 <form id="myForm">
     <label for="pswd">Enter the password! </label>
     <input type="password" maxlength=4 id="pswd">
@@ -31,39 +36,13 @@
         var password = document.getElementById("pswd").value;
         var input = document.getElementById("pswd");
         if (password == confirmPassword) {
-            input.type = "text";
-            input.value = "redirecting...;
+            input.setAttribute("type","text");
+            input.setAttribute("value","redirecting...");
              setTimeout(() => { window.location="yess.html";}, 1500);
         }
         else{ 
-        cats.pause();
-        nope.play(); 
-        sad.play();
         }
     }
-    checkPswd();
-</script>
-<p>  
-    </p>
-    <audio id="cats" loop>
-  <source src="nyanremix.mp3" type="audio/mpeg">
-</audio>
-    <audio id="nope">
-  <source src="nope.mp3" type="audio/mpeg">
-</audio>
-    <audio id="sad">
-  <source src="sad.mp3" type="audio/mpeg">
-</audio>
-    <p>  
-    </p>
-    <img
-    src="https://placekitten.com/200/200"
-    alt="pic id code"
-    onClick="openFullscreen()"
-    role="button"
-    tabIndex="0"
-  /img>
-<script>
 /* Get the documentElement (<html>) to display the page in fullscreen */
 var elem = document.documentElement;
 var cats = document.getElementById("cats");
@@ -93,16 +72,29 @@ function closeFullscreen() {
 var form = document.getElementById("myForm");
 form.addEventListener("input", function () {
         console.log("Form has changed!");
-        var confirmPassword = "meaw";
-        var password = document.getElementById("pswd").value;
-        var input = document.getElementById("pswd");
-        if (password == confirmPassword) {
-            input.type = "text";
-            input.value = "redirecting...;
-            setTimeout(() => { window.location="yess.html";}, 1500);
-        }
+        checkPswd();
 });
     </script>
+    <p>  
+    </p>
+    <audio id="cats" loop>
+  <source src="nyanremix.mp3" type="audio/mpeg">
+</audio>
+    <audio id="nope">
+  <source src="nope.mp3" type="audio/mpeg">
+</audio>
+    <audio id="sad">
+  <source src="sad.mp3" type="audio/mpeg">
+</audio>
+    <p>  
+    </p>
+    <img
+    src="https://placekitten.com/200/200"
+    alt="pic id code"
+    onClick="openFullscreen()"
+    role="button"
+    tabIndex="0"
+  /img>
     <p id="color">click on the cat :)</p>
 </body>
 </html>
