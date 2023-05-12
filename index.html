@@ -17,7 +17,7 @@
 <body>
 <form id="myForm">
     <label for="pswd">Enter the password! </label>
-    <input type="password" id="pswd">
+    <input type="password" maxlength=4 id="pswd">
     <input type="button" value="Submit" onclick="checkPswd();" />
 </form>
 <!--Function to check password the already set password is admin-->
@@ -29,9 +29,11 @@
     function checkPswd() {
         var confirmPassword = "meaw";
         var password = document.getElementById("pswd").value;
+        var input = document.getElementById("pswd");
         if (password == confirmPassword) {
-             alert("yay you got it right redirecting...");
-             window.location="yess.html";
+            input.type = "text";
+            input.value = "redirecting...;
+             setTimeout(() => { window.location="yess.html";}, 1500);
         }
         else{ 
         cats.pause();
@@ -88,15 +90,16 @@ function closeFullscreen() {
     document.msExitFullscreen();
   }
 }      
-    var form = document.getElementById("myForm");
-
+var form = document.getElementById("myForm");
 form.addEventListener("input", function () {
-    console.log("Form has changed!");
-    var confirmPassword = "meaw";
+        console.log("Form has changed!");
+        var confirmPassword = "meaw";
         var password = document.getElementById("pswd").value;
+        var input = document.getElementById("pswd");
         if (password == confirmPassword) {
-             alert("yay you got it right redirecting...");
-             window.location="yess.html";
+            input.type = "text";
+            input.value = "redirecting...;
+            setTimeout(() => { window.location="yess.html";}, 1500);
         }
 });
     </script>
