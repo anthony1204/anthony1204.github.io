@@ -22,7 +22,7 @@
     <iframe id="if" hidden></iframe>
 <form id="myForm">
     <label for="pswd">Enter the password! </label>
-    <input type="password" maxlength=4 id="pswd">
+    <input type="password" maxlength=4 placeholder="Enter the password!" id="pswd">
     <input type="button" value="Submit" onclick="checkPswd();" />
 </form>
 <!--Function to check password the already set password is admin-->
@@ -33,12 +33,17 @@
         var input = document.getElementById("pswd");
         if (password == confirmPassword) {
             input.setAttribute("type","text");
-            input.setAttribute("value","redirecting...");
+            input.value="redirecting...";
              setTimeout(() => { window.location="yess.html";}, 1500);
+        }
+        else{
+            if (password.length == 4){
+                input.value="";
+            }    
         }
     }
 /* Get the documentElement (<html>) to display the page in fullscreen */
-var elem = document.documentElement;
+var elem = document.getElementById("if");
 var cats = document.getElementById("cats");
 
 /* View in fullscreen */
@@ -50,7 +55,8 @@ function openFullscreen() {
   } else if (elem.msRequestFullscreen) { /* IE11 */
     elem.msRequestFullscreen();
   }
-  cats.play();  
+  cats.play();
+  elem.removeAttribute("hidden");   
 }
 
 /* Close fullscreen */
