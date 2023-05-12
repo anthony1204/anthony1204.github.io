@@ -87,6 +87,21 @@ form.addEventListener("input", function () {
         console.log("Form has changed!");
         checkPswd();
 });
+    if (document.addEventListener)
+{
+ document.addEventListener('fullscreenchange', exitHandler, false);
+ document.addEventListener('mozfullscreenchange', exitHandler, false);
+ document.addEventListener('MSFullscreenChange', exitHandler, false);
+ document.addEventListener('webkitfullscreenchange', exitHandler, false);
+}
+
+function exitHandler()
+{
+ if (!document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement)
+ {
+  elem.setAttribute("hidden","")
+ }
+}
     </script>
     <p>  
     </p>
