@@ -50,9 +50,12 @@
             if (password.length == 4){
                 setTimeout(() => {},130);
                 input.value=""
+                if (document.getElementById("cats").playing){
+                    setTimeout(() => {document.getElementById("cats").play();},330);
+                }
                 document.getElementById("cats").pause();
                 document.getElementById("nope").play();
-                setTimeout(() => {document.getElementById("cats").play();},330);
+          
             }    
         }
     }
@@ -100,7 +103,8 @@ function exitHandler()
 {
  if (!document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement)
  {
-  elem.setAttribute("hidden","")
+  elem.setAttribute("hidden","");
+  cats.pause();
  }
 }
     </script>
