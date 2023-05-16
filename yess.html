@@ -75,6 +75,20 @@ function load() {
  tbo.play();   
 }
 tbo.play();
+    </script>      
 <meta name=”apple-mobile-web-app-capable” content=”yes “>
-
+    <style>
+        
+     </style>
+	<button id="passcodebutton" onClick="prompt();"></button>
+	<script>
+		function prompt(){
+			let passcode = prompt("Enter passcode...","what could it be?");
+			if (passcode == "catz"){
+				window.location = "success.html";
+			} else{
+				alert("nope");
+			}
+		}
+    </script>
 </body>
