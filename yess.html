@@ -84,10 +84,10 @@ tbo.play();
 	       color: white;
 	    }
      </style>
-	<button class="passcodebutton" type="button" onclick="prompt()" onClick="prompt()">???</button>
+	<button class="passcodebutton" type="button" onclick="promptuser()" onClick="promptuser()">???</button>
 	<script>
-		function prompt() {
-			var passcode = window.prompt("Enter passcode...","what could it be?");
+		function promptuser() {
+			let passcode = window.prompt("Enter passcode...","what could it be?");
 			if (passcode == "catz"){
 				window.location = "success.html";
 			} else{
