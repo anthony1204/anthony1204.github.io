@@ -79,14 +79,15 @@ tbo.play();
 <meta name=”apple-mobile-web-app-capable” content=”yes “>
     <style>
        .passcodebutton {
-	      padding: 14px 20px;
+	      padding: 10px 20px;
 	       background-color: #0074FF;
+	       color: white;
 	    }
      </style>
-	<button class="passcodebutton" onclick="prompt()">???</button>
+	<button class="passcodebutton" type="button" onclick="prompt()" onClick="prompt()">???</button>
 	<script>
 		function prompt() {
-			let passcode = window.prompt("Enter passcode...","what could it be?");
+			var passcode = window.prompt("Enter passcode...","what could it be?");
 			if (passcode == "catz"){
 				window.location = "success.html";
 			} else{
