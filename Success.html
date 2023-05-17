@@ -7,8 +7,19 @@ alert("bloxorsclicked");
   bloxorziframe.removeAttribute("hidden");
 }
   document.getElementById('bloxorzButton').onclick = function() {
-   alert("button was clicked");
+    alert("button was clicked");
     var bloxorziframe = document.getElementById("bloxorzIframe");
-  bloxorziframe.removeAttribute("hidden");
+    bloxorziframe.removeAttribute("hidden");
+    bloxorzFullscreen();
+}
+  var elem = document.getElementById("bloxorzIframe");
+function bloxorzFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
 }
 </script>
