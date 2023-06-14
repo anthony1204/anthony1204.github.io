@@ -4,7 +4,7 @@
     <h1>screensaver testing</h1>
     <style>
       body {
-        transition: background 1s ease;
+        transition: background 100ms ease;
       }
     </style>
     <script>
@@ -14,7 +14,7 @@
         setTimeout(function(){body.style.backgroundColor = 'yellow';},100);
         setTimeout(function(){body.style.backgroundColor = 'blue';},200);
       }
-      colorFade();
+      setInterval(colorFade,300);
       
     </script>
   </body>
