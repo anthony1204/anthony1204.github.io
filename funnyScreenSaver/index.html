@@ -1,6 +1,6 @@
 <html>
   <body>
-    <title>cssTestScreenSaver</title>
+    <title>TestScreenSaver</title>
     <h1>screensaver testing</h1>
     <style>
       body {
@@ -13,8 +13,11 @@
         body.style.backgroundColor = 'green';
         setTimeout(function(){body.style.backgroundColor = 'yellow';},100);
         setTimeout(function(){body.style.backgroundColor = 'blue';},200);
+        setTimeout(function(){body.style.backgroundColor = 'orange';},300);
+        setTimeout(function(){body.style.backgroundColor = 'red';},400);
+        setTimeout(function(){body.style.backgroundColor = 'purple';},500);
       }
-      setInterval(colorFade,300);
+      setInterval(colorFade,600);
       
     </script>
   </body>
