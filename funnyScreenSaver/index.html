@@ -11,8 +11,8 @@
       var body = document.getElementsByTagName('body')[0];
       function colorFade() {
         body.style.backgroundColor = 'green';
-        await setTimeout(function(){body.style.backgroundColor = 'yellow';},100);
-        await setTimeout(function(){body.style.backgroundColor = 'blue';},100);
+        setTimeout(function(){body.style.backgroundColor = 'yellow';},100);
+        setTimeout(function(){body.style.backgroundColor = 'blue';},200);
       }
       setInterval(colorFade,300);
       
