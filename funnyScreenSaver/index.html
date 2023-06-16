@@ -3,7 +3,7 @@
     <title>TestScreenSaver</title>
     <style>
       body {
-        transition: background 50ms ease;
+        backgroundColor: green;
       }
     </style>
     <script>
@@ -17,7 +17,7 @@
         setTimeout(function(){body.style.backgroundColor = 'red';},400);
         setTimeout(function(){body.style.backgroundColor = 'purple';},500);
         //rgb text
-        var r = document.querySelector("#rgb");
+        var r = document.querySelector("#div");
         setTimeout(function(){r.style.color = 'yellow';},1000);
         setTimeout(function(){r.style.color = 'blue';},2000);
         setTimeout(function(){r.style.color = 'orange';},3000);
@@ -27,6 +27,8 @@
       setInterval(colorFade,600);
       
     </script>
-    <h1 id="rgb" style="text-align: centre; transition: background 1s ease;">EPIC RGB SCREENSAVER</h1>
+    <div id="div">
+     <h1 id="rgb" style="text-align: centre; transition: background 1s ease;">EPIC RGB SCREENSAVER</h1>
+    </div>
   </body>
 </html>
