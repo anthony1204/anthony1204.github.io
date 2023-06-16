@@ -40,6 +40,19 @@
   }
 }
 });
+      document.addEventListener('touchstart', function(event) {
+        var elem = document.documentElement;
+        document.querySelector(".note").setAttribute("hidden");
+       function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+});
       setInterval(colorFade,600);
     </script>
     <div id="div">
