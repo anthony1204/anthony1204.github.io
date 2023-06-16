@@ -6,6 +6,7 @@
         backgroundColor: green;
       }
     </style>
+    <p id="note" color="red"><font size=7>click page to continue...</font>
     <script>
       var body = document.getElementsByTagName('body')[0];
       function colorFade() {
@@ -26,6 +27,19 @@
         setTimeout(function(){r.style.color = 'purple';},5000);
         */
       }
+      document.addEventListener('click', function(event) {
+        var elem = document.documentElement;
+        document.querySelector(".note").setAttribute("hidden");
+       function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+});
       setInterval(colorFade,600);
     </script>
     <div id="div">
