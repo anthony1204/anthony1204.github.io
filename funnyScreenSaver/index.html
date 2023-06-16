@@ -1,7 +1,6 @@
 <html>
   <body>
     <title>TestScreenSaver</title>
-    <h1>screensaver testing</h1>
     <style>
       body {
         transition: background 50ms ease;
@@ -10,15 +9,24 @@
     <script>
       var body = document.getElementsByTagName('body')[0];
       function colorFade() {
+        //rgb background
         body.style.backgroundColor = 'green';
         setTimeout(function(){body.style.backgroundColor = 'yellow';},100);
         setTimeout(function(){body.style.backgroundColor = 'blue';},200);
         setTimeout(function(){body.style.backgroundColor = 'orange';},300);
         setTimeout(function(){body.style.backgroundColor = 'red';},400);
         setTimeout(function(){body.style.backgroundColor = 'purple';},500);
+        //rgb text
+        var r = document.querySelector("#rgb");
+        setTimeout(function(){r.style.color = 'yellow';},1000);
+        setTimeout(function(){r.style.color = 'blue';},2000);
+        setTimeout(function(){r.style.color = 'orange';},3000);
+        setTimeout(function(){r.style.color = 'red';},4000);
+        setTimeout(function(){r.style.color = 'purple';},5000);
       }
       setInterval(colorFade,600);
       
     </script>
+    <h1 id="rgb" style="text-align: centre; transition: background 1s ease;">EPIC RGB SCREENSAVER</h1>
   </body>
 </html>
