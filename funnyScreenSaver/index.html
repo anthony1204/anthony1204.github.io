@@ -5,8 +5,11 @@
       body {
         backgroundColor: green;
       }
+      .centre {
+        text-align: centre;
+        color: #00FFFF;
+      }
     </style>
-    <p id="note" color="red"><font size=7>click page to continue...</font>
     <script>
       var body = document.getElementsByTagName('body')[0];
       function colorFade() {
@@ -56,7 +59,7 @@
       setInterval(colorFade,600);
     </script>
     <div id="div">
-     <h1 id="rgb" style="text-align: centre; transition: background 1s ease; color: #00ffff;">EPIC RGB SCREENSAVER</h1>
+     <h1 class="centre">EPIC RGB SCREENSAVER</h1>
     </div>
   </body>
 </html>
