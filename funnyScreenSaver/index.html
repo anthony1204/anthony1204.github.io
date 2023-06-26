@@ -9,8 +9,23 @@
         text-align: centre;
         color: #00FFFF;
       }
+      .button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #4CAF50;}
     </style>
+    <audio src="https://anthony1204.github.io/nyanremix.mp3" id="nyan" autoplay loop></audio>
     <script>
+ /* Get the documentElement (<html>) to display the page in fullscreen */
       var body = document.getElementsByTagName('body')[0];
       function colorFade() {
         //rgb background
@@ -30,10 +45,10 @@
         setTimeout(function(){r.style.color = 'purple';},5000);
         */
       }
-      document.addEventListener('click', function(event) {
         var elem = document.documentElement;
-        document.querySelector(".note").setAttribute("hidden");
        function openFullscreen() {
+         document.querySelector("#nyan").play();
+         document.querySelector(".button").setAttribute("hidden");
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
   } else if (elem.webkitRequestFullscreen) { /* Safari */
@@ -42,24 +57,11 @@
     elem.msRequestFullscreen();
   }
 }
-});
-      document.addEventListener('touchstart', function(event) {
-        var elem = document.documentElement;
-        document.querySelector(".note").setAttribute("hidden");
-       function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
-  }
-}
-});
       setInterval(colorFade,600);
     </script>
     <div id="div">
      <h1 class="centre">EPIC RGB SCREENSAVER</h1>
+      <button class="button" onclick="openFullscreen();">
     </div>
   </body>
 </html>
