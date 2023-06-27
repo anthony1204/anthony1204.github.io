@@ -49,7 +49,7 @@
     </script>
     <div id="div">
      <h1 class="centre">EPIC RGB SCREENSAVER</h1>
-      <button class="button" onclick="fs()" content="click for chaos">
+      <button class="button button1" onclick="fs()" content="click for chaos">
     </div>
     <script>
       //detect button
@@ -59,11 +59,14 @@
         //check user confirmed
         if (conf == false){
           alert("good choice");
-          return
+          window.close();
+          return;
         } else {
           alert("prepare to suffer");
         }
+        //hide button and show label
         document.querySelector(".button").style.visibility = "hidden";
+        document.querySelector(.centre).style.visibility = "visible";
         //fullscreen chaos
         var fs = document.documentElement;
         if (fs.requestFullscreen) {
