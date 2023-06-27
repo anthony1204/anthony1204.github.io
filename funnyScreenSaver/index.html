@@ -21,9 +21,9 @@
   cursor: pointer;
 }
 
-.button1 {background-color: #4CAF50;}
+.button1 {background-color: #F6F66F;}
     </style>
-    <audio src="https://anthony1204.github.io/nyanremix.mp3" id="nyan" autoplay loop></audio>
+    <audio src="https://anthony1204.github.io/nyanremix.mp3" id="nyan" loop></audio>
     <script>
  /* Get the documentElement (<html>) to display the page in fullscreen */
       var body = document.getElementsByTagName('body')[0];
@@ -45,23 +45,23 @@
         setTimeout(function(){r.style.color = 'purple';},5000);
         */
       }
-        var elem = document.documentElement;
-       function openFullscreen() {
-         document.querySelector("#nyan").play();
-         document.querySelector(".button").setAttribute("hidden");
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
+      var elem = document.documentElement;
+      document.querySelector("#button").onclick = function() {
+        document.querySelector("#nyan").play();
+        document.querySelector("#button").setAttribute("hidden");
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { /* Safari */
+          elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE11 */
+          elem.msRequestFullscreen();
   }
-}
+};
       setInterval(colorFade,600);
     </script>
     <div id="div">
      <h1 class="centre">EPIC RGB SCREENSAVER</h1>
-      <button class="button" onclick="openFullscreen();">
+      <button id="button" onclick="openFullscreen();">fullscreen :)</button>
     </div>
   </body>
 </html>
