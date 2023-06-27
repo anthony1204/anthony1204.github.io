@@ -3,11 +3,12 @@
     <title>TestScreenSaver</title>
     <style>
       body {
-        backgroundColor: green;
+        transition: background 50ms ease;
       }
       .centre {
         text-align: centre;
         color: #00FFFF;
+        visibility: hidden;
       }
       .button {
   border: none;
@@ -21,7 +22,7 @@
   cursor: pointer;
 }
 
-.button1 {background-color: #4CAF50;}
+.button1 {background-color: #00ff08;}
     </style>
     <audio src="https://anthony1204.github.io/nyanremix.mp3" id="nyan" autoplay loop></audio>
     <script>
@@ -45,39 +46,36 @@
         setTimeout(function(){r.style.color = 'purple';},5000);
         */
       }
-      document.addEventListener('click', function(event) {
-        var elem = document.documentElement;
-        document.querySelector(".note").setAttribute("hidden");
-       function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
-  }
-}
-});
-      document.addEventListener('touchstart', function(event) {
-        var elem = document.documentElement;
-        document.querySelector(".note").setAttribute("hidden");
-       function openFullscreen() {
-         document.querySelector("#nyan").play();
-         document.querySelector(".button").setAttribute("hidden");
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
-  }
-}
-});
-      setInterval(colorFade,600);
     </script>
     <div id="div">
      <h1 class="centre">EPIC RGB SCREENSAVER</h1>
-      <button class="button" onclick="openFullscreen();">
+      <button class="button" onclick="fs()" content="click for chaos">
     </div>
+    <script>
+      //detect button
+      function fs(){
+        //check for epilepsy
+        let conf = window.confirm("click ok if you dont have epilepsy or prepare to suffer :)");
+        //check user confirmed
+        if (conf == false){
+          alert("good choice");
+          return
+        } else {
+          alert("prepare to suffer");
+        }
+        document.querySelector(".button").style.visibility = "hidden";
+        //fullscreen chaos
+        var fs = document.documentElement;
+        if (fs.requestFullscreen) {
+           fs.requestFullscreen();
+        } else if (fs.webkitRequestFullscreen) {
+           fs.webkitRequestFullscreen();
+        } else if (fs.msRequestFullscreen) {
+           fs.msRequestFullscreen();
+        }
+        //set color to change
+        setInterval(colorFade,600);
+      }
+    </script>
   </body>
 </html>
