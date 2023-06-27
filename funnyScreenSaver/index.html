@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <body>
     <title>TestScreenSaver</title>
@@ -22,47 +21,50 @@
   cursor: pointer;
 }
 
-.button1 {background-color: blue;}
+.button1 {background-color: #4CAF50;}
     </style>
-    <audio src="https://anthony1204.github.io/nyanremix.mp3" id="nyan" loop></audio>
+    <audio src="https://anthony1204.github.io/nyanremix.mp3" id="nyan" autoplay loop></audio>
     <script>
  /* Get the documentElement (<html>) to display the page in fullscreen */
       var body = document.getElementsByTagName('body')[0];
       function colorFade() {
         //rgb background
-        body.style.backgroundColor = 'green';
-        setTimeout(function(){body.style.backgroundColor = 'yellow';},100);
-        setTimeout(function(){body.style.backgroundColor = 'blue';},200);
-        setTimeout(function(){body.style.backgroundColor = 'orange';},300);
-        setTimeout(function(){body.style.backgroundColor = 'red';},400);
-        setTimeout(function(){body.style.backgroundColor = 'purple';},500);
-        //rgb text
-        /*
-        var r = document.querySelector("#div");
-        setTimeout(function(){r.style.color = 'yellow';},1000);
-        setTimeout(function(){r.style.color = 'blue';},2000);
-        setTimeout(function(){r.style.color = 'orange';},3000);
-        setTimeout(function(){r.style.color = 'red';},4000);
+@@ -30,23 +45,10 @@
         setTimeout(function(){r.style.color = 'purple';},5000);
         */
       }
-      var elem = document.documentElement;
-      document.querySelector("#button").onclick = function() {
-        document.querySelector("#nyan").play();
-        document.querySelector("#button").setAttribute("hidden");
-        if (elem.requestFullscreen) {
-          elem.requestFullscreen();
-      } else if (elem.webkitRequestFullscreen) { /* Safari */
-          elem.webkitRequestFullscreen();
-      } else if (elem.msRequestFullscreen) { /* IE11 */
-          elem.msRequestFullscreen();
+      document.addEventListener('click', function(event) {
+        var elem = document.documentElement;
+        document.querySelector(".note").setAttribute("hidden");
+       function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
   }
-};
+}
+});
+      document.addEventListener('touchstart', function(event) {
+        var elem = document.documentElement;
+        document.querySelector(".note").setAttribute("hidden");
+       function openFullscreen() {
+         document.querySelector("#nyan").play();
+         document.querySelector(".button").setAttribute("hidden");
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+@@ -55,11 +57,11 @@
+    elem.msRequestFullscreen();
+  }
+}
+});
       setInterval(colorFade,600);
     </script>
     <div id="div">
      <h1 class="centre">EPIC RGB SCREENSAVER</h1>
-      <button id="button" onclick="openFullscreen();">fullscreen :)</button>
+      <button class="button" onclick="openFullscreen();">
     </div>
   </body>
 </html>
