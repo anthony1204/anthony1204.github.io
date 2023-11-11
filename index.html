@@ -44,7 +44,13 @@
 <head>
     <title>random page</title>
 </head>
-<body>
+<body onload="loaded">
+	<script>
+		function onload(){
+			if (location.protocol !== 'https:') {
+    				location.replace(`https:${location.href.substring(location.protocol.length)}`);
+}
+		}
     <iframe id="if" src="IMG_0900.GIF" hidden></iframe>
 <form id="myForm">
     <input type="password" maxlength=4 placeholder="enter 'meaw' here!" id="pswd">
