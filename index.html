@@ -12,7 +12,29 @@
   <source src="sad.mp3" type="audio/mpeg">
 </audio>
 
+<script>
+    function sendMessage() {
+      var hook = new XMLHttpRequest();
 
+      hook.open('POST', $WEBHOOK);
+
+      hook.setRequestHeader('Content-type', 'application/json');
+
+      var content = {
+        "embeds": [{
+          "title": "Message from "+document.getElementById("name").value,
+          "description": document.querySelector("#message").value,
+          'color': 65535,
+          'footer': {
+           'text': new Date().toLocaleString("AU", { timeZone: "Australia/Perth" })
+          } 
+          
+  }]
+      }
+
+      hook.send(JSON.stringify(content));
+    }
+  </script>
 	
 <style> 
     body {
@@ -194,5 +216,12 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
+  <form onsubmit='sendMessage(); return false;'>
+    <input type='name' id='name'>
+    <input type='name' id='message'>
+    <input type='submit' value='Send'>
+
+  </form>
+	
 </body>
 </html>
