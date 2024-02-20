@@ -51,11 +51,11 @@
     </script>
     <div id="div">
      <h1 class="centre">等！</h1>
-      <h2 class="centre">我很快就会回来！
+      <h2 class="h">我很快就会回来！
 电话号码: +86 1786 4272 035</h2>
-      <p>(yes i made a WEBSITE for this...)</p>
-      <p>如果您不在乎，请按 ESC</p>
-      <button class="button" onclick="fs()">click me</button>
+      <p class="h">(yes i made a WEBSITE for this...)</p>
+      <p class="h">如果您不在乎，请按 ESC</p>
+      <button onclick="fs()">click me</button>
     </div>
     <script>
       //detect button
@@ -72,7 +72,9 @@
         //hide button and show label
         document.querySelector(".button").style.visibility = "hidden";
         document.querySelector(".centre").style.visibility = "visible";
+        document.querySelector(".h").style.visibility = "visible";
         //music
+        
         document.querySelector("#nyan").play();
         //fullscreen chaos
         var fs = document.documentElement;
